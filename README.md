@@ -1,4 +1,4 @@
-# weiboSwift
-SinaWeiboSwift3.0
+# RXSwift
 
-用来Swift3.0练手，和MVVM设计模式练手
+learn rxswift
+
