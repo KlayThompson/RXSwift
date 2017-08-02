@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ED2A3E470EE62F9CE137C02 /* Pods_ZhiHuRX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11C122BC45FE6C29474D761 /* Pods_ZhiHuRX.framework */; };
 		3B72C3EF1F316D9C007D1B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72C3EE1F316D9C007D1B5A /* AppDelegate.swift */; };
 		3B72C3F11F316D9C007D1B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72C3F01F316D9C007D1B5A /* ViewController.swift */; };
 		3B72C3F41F316D9C007D1B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B72C3F21F316D9C007D1B5A /* Main.storyboard */; };
@@ -22,6 +23,9 @@
 		3B72C3F51F316D9C007D1B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B72C3F81F316D9C007D1B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B72C3FA1F316D9C007D1B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53EFAC13ABA49904E8672CBC /* Pods-ZhiHuRX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuRX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuRX/Pods-ZhiHuRX.release.xcconfig"; sourceTree = "<group>"; };
+		B28391FD032CBAF441D6233D /* Pods-ZhiHuRX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuRX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuRX/Pods-ZhiHuRX.debug.xcconfig"; sourceTree = "<group>"; };
+		F11C122BC45FE6C29474D761 /* Pods_ZhiHuRX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHuRX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED2A3E470EE62F9CE137C02 /* Pods_ZhiHuRX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				3B72C3ED1F316D9C007D1B5A /* ZhiHuRX */,
 				3B72C3EC1F316D9C007D1B5A /* Products */,
+				FEBB31B08372C63AD77E42EA /* Pods */,
+				B4804A8B32B0107B115EDE05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = ZhiHuRX;
 			sourceTree = "<group>";
 		};
+		B4804A8B32B0107B115EDE05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F11C122BC45FE6C29474D761 /* Pods_ZhiHuRX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEBB31B08372C63AD77E42EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B28391FD032CBAF441D6233D /* Pods-ZhiHuRX.debug.xcconfig */,
+				53EFAC13ABA49904E8672CBC /* Pods-ZhiHuRX.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B72C3FD1F316D9C007D1B5A /* Build configuration list for PBXNativeTarget "ZhiHuRX" */;
 			buildPhases = (
+				661E1D84AAADBDDB68E1BF9E /* [CP] Check Pods Manifest.lock */,
 				3B72C3E71F316D9C007D1B5A /* Sources */,
 				3B72C3E81F316D9C007D1B5A /* Frameworks */,
 				3B72C3E91F316D9C007D1B5A /* Resources */,
+				72B83BDB3CEDFF901B357440 /* [CP] Embed Pods Frameworks */,
+				CBA8A2A044FFB209E6938B07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		661E1D84AAADBDDB68E1BF9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		72B83BDB3CEDFF901B357440 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHuRX/Pods-ZhiHuRX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBA8A2A044FFB209E6938B07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHuRX/Pods-ZhiHuRX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B72C3E71F316D9C007D1B5A /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		3B72C3FE1F316D9C007D1B5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B28391FD032CBAF441D6233D /* Pods-ZhiHuRX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3BB36MF7NL;
@@ -272,6 +348,7 @@
 		};
 		3B72C3FF1F316D9C007D1B5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53EFAC13ABA49904E8672CBC /* Pods-ZhiHuRX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3BB36MF7NL;
