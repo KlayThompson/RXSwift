@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         let usernameObserable = usernameTextField.rx
-            .text.shareReplay(1)
+            .text
             .map({($0?.characters.count ?? 0) >= 6})
             
         
@@ -41,7 +41,6 @@ class LoginViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         let passwordObserable = passwordTextField.rx.text
-            .shareReplay(1)
             .map({($0?.characters.count ?? 0) >= 8})
             
             
@@ -49,7 +48,7 @@ class LoginViewController: UIViewController {
                 self.check2Iamge.image = valid.element ?? false ? #imageLiteral(resourceName: "checkGood") : #imageLiteral(resourceName: "checkBad")
             })
         
-        _ = Observable.combineLatest(usernameObserable, passwordObserable) {$0 && $1}.subscribe({valid in
+        Observable.combineLatest(usernameObserable, passwordObserable) {$0 && $1}.subscribe({valid in
             
             let canLogin = valid.element ?? false
             
@@ -61,7 +60,13 @@ class LoginViewController: UIViewController {
                 self.loginButton.backgroundColor = UIColor.lightGray
             }
             
-        })
+        }).addDisposableTo(disposeBag)
+        
+        loginButton.rx
+            .tap
+            .subscribe(onNext: {
+                print("1234567890-987654")
+            }).addDisposableTo(disposeBag)
         
     }
 
