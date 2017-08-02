@@ -23,6 +23,7 @@
 		3B72C4181F31B56E007D1B5A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72C4171F31B56E007D1B5A /* MenuViewController.swift */; };
 		3B72C41C1F31C43C007D1B5A /* ThemeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72C41B1F31C43C007D1B5A /* ThemeResponseModel.swift */; };
 		3B72C41E1F31C47F007D1B5A /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72C41D1F31C47F007D1B5A /* ThemeTableViewCell.swift */; };
+		3B72C4201F31D097007D1B5A /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72C41F1F31D097007D1B5A /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		3B72C4171F31B56E007D1B5A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3B72C41B1F31C43C007D1B5A /* ThemeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeResponseModel.swift; sourceTree = "<group>"; };
 		3B72C41D1F31C47F007D1B5A /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
+		3B72C41F1F31D097007D1B5A /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		53EFAC13ABA49904E8672CBC /* Pods-ZhiHuRX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuRX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuRX/Pods-ZhiHuRX.release.xcconfig"; sourceTree = "<group>"; };
 		B28391FD032CBAF441D6233D /* Pods-ZhiHuRX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuRX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuRX/Pods-ZhiHuRX.debug.xcconfig"; sourceTree = "<group>"; };
 		F11C122BC45FE6C29474D761 /* Pods_ZhiHuRX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHuRX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3B72C4051F317339007D1B5A /* HomeViewController.swift */,
+				3B72C41F1F31D097007D1B5A /* ListTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				3B72C4081F317367007D1B5A /* HomeViewModel.swift in Sources */,
 				3B72C41E1F31C47F007D1B5A /* ThemeTableViewCell.swift in Sources */,
 				3B72C4061F317339007D1B5A /* HomeViewController.swift in Sources */,
+				3B72C4201F31D097007D1B5A /* ListTableViewCell.swift in Sources */,
 				3B72C41C1F31C43C007D1B5A /* ThemeResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

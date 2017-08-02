@@ -30,7 +30,7 @@
         <!--首页-->
         <scene sceneID="ojQ-rb-dL5">
             <objects>
-                <viewController id="beC-Nq-edq" customClass="HomeViewController" customModule="ZhiHuRX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="beC-Nq-edq" customClass="HomeViewController" customModule="ZhiHuRX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="euJ-0F-6Uv"/>
                         <viewControllerLayoutGuide type="bottom" id="r19-SH-N8e"/>
@@ -39,9 +39,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-93-0D8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="90" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-93-0D8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="xYf-Zg-Gy3" customClass="ZYBannerView">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="0.80456376149999997" blue="0.26760355559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListTableViewCell" rowHeight="90" id="8L7-Ca-tFB" customClass="ListTableViewCell" customModule="ZhiHuRX" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8L7-Ca-tFB" id="BJZ-pE-Jr2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgz-QW-Gfl">
+                                                    <rect key="frame" x="15" y="14" width="255" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.031364817170000003" green="0.031376998869999999" blue="0.031364053490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ubv-Lq-VmU">
+                                                    <rect key="frame" x="285" y="14" width="75" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="GZ0-3p-y3x"/>
+                                                        <constraint firstAttribute="height" constant="60" id="fxd-Ea-QN7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_Morepic" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-mo-Xfe">
+                                                    <rect key="frame" x="328" y="60" width="32" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="0kc-c4-LDM"/>
+                                                        <constraint firstAttribute="height" constant="14" id="ufX-Ih-g1Y"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7zN-mo-Xfe" secondAttribute="trailing" constant="15" id="2KU-sY-waa"/>
+                                                <constraint firstAttribute="bottom" secondItem="7zN-mo-Xfe" secondAttribute="bottom" constant="15" id="JOC-zc-EMv"/>
+                                                <constraint firstAttribute="trailing" secondItem="ubv-Lq-VmU" secondAttribute="trailing" constant="15" id="JgJ-h0-r1g"/>
+                                                <constraint firstItem="ubv-Lq-VmU" firstAttribute="top" secondItem="dgz-QW-Gfl" secondAttribute="top" id="MdU-BM-U1h"/>
+                                                <constraint firstItem="dgz-QW-Gfl" firstAttribute="leading" secondItem="BJZ-pE-Jr2" secondAttribute="leading" constant="15" id="VXY-EZ-5Lb"/>
+                                                <constraint firstAttribute="trailing" secondItem="dgz-QW-Gfl" secondAttribute="trailing" constant="105" id="tdH-Iq-ToJ"/>
+                                                <constraint firstItem="ubv-Lq-VmU" firstAttribute="centerY" secondItem="BJZ-pE-Jr2" secondAttribute="centerY" id="ut3-2E-nZV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="moreImageIcon" destination="7zN-mo-Xfe" id="VyP-1u-yT2"/>
+                                            <outlet property="newsImageview" destination="ubv-Lq-VmU" id="n4O-6O-4w5"/>
+                                            <outlet property="titleLabel" destination="dgz-QW-Gfl" id="E6N-ti-V1N"/>
+                                            <outlet property="titleLabelRightCons" destination="tdH-Iq-ToJ" id="6VG-Qd-WD4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,6 +320,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Home_Morepic" width="32" height="14"/>
         <image name="Menu_Avatar" width="35" height="35"/>
         <image name="Menu_Dark" width="22" height="22"/>
         <image name="Menu_Download" width="22" height="22"/>
