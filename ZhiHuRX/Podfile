@@ -15,4 +15,5 @@ pod 'RxCocoa'
 pod 'RxDataSources'
 pod 'Then'
 pod 'SwiftDate'
+pod 'ZYBannerView'
 end

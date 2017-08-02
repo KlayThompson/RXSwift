@@ -19,6 +19,7 @@ PODS:
   - RxSwift (3.6.1)
   - SwiftDate (4.1.7)
   - Then (2.1.0)
+  - ZYBannerView (1.1.4)
 
 DEPENDENCIES:
   - HandyJSON
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - RxSwift
   - SwiftDate
   - Then
+  - ZYBannerView
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -42,7 +44,8 @@ SPEC CHECKSUMS:
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
   Then: 8496793c8fcac95482b943909b440724c7d8d82c
+  ZYBannerView: 477bcb8c38bb0b2a45bae014f9e4fa8357809023
 
-PODFILE CHECKSUM: 181c062ca4c373c3867d8076e23aa537a95fc2fe
+PODFILE CHECKSUM: 1928c9a16bea93b239192422cfd1d000d2566578
 
 COCOAPODS: 1.1.1
