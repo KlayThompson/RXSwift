@@ -20,8 +20,8 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setLaunchView()
+        
+//        setLaunchView()
     }
 
     func setLaunchView() {

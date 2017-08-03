@@ -15,6 +15,7 @@
             <objects>
                 <navigationController id="hKe-5p-HzW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="hff-rg-Pkl"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDe-jk-dgv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,7 +31,7 @@
         <!--Data Source-->
         <scene sceneID="ojQ-rb-dL5">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="beC-Nq-edq" customClass="HomeViewController" customModule="ZhiHuRX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="beC-Nq-edq" customClass="HomeViewController" customModule="ZhiHuRX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="euJ-0F-6Uv"/>
                         <viewControllerLayoutGuide type="bottom" id="r19-SH-N8e"/>
@@ -39,13 +40,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="90" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-93-0D8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="90" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-93-0D8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="xYf-Zg-Gy3" customClass="ZYBannerView">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="1" green="0.80456376149999997" blue="0.26760355559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldLoop" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoScroll" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <outlet property="dataSource" destination="beC-Nq-edq" id="tT1-3a-QVy"/>
                                     </connections>
@@ -100,18 +106,13 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jrK-93-0D8" secondAttribute="trailing" id="FBA-lg-kmy"/>
-                            <constraint firstItem="jrK-93-0D8" firstAttribute="top" secondItem="euJ-0F-6Uv" secondAttribute="bottom" id="HzQ-1D-deR"/>
-                            <constraint firstItem="r19-SH-N8e" firstAttribute="top" secondItem="jrK-93-0D8" secondAttribute="bottom" id="QUs-ub-PS4"/>
-                            <constraint firstItem="jrK-93-0D8" firstAttribute="leading" secondItem="AZL-vX-a2y" secondAttribute="leading" id="cWH-cZ-yOS"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="zeR-Ls-xSt">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="HSV-QZ-JGb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="bannerView" destination="xYf-Zg-Gy3" id="3vv-xA-LGC"/>
                         <outlet property="menuItem" destination="HSV-QZ-JGb" id="wXH-Nq-SdK"/>
@@ -311,6 +312,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="t3q-d3-q5o" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="qyG-cE-Gt3">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
