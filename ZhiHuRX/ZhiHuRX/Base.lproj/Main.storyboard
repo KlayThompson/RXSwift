@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="1073" y="211"/>
         </scene>
-        <!--首页-->
+        <!--Data Source-->
         <scene sceneID="ojQ-rb-dL5">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="beC-Nq-edq" customClass="HomeViewController" customModule="ZhiHuRX" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,6 +46,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="0.80456376149999997" blue="0.26760355559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="beC-Nq-edq" id="tT1-3a-QVy"/>
+                                    </connections>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListTableViewCell" rowHeight="90" id="8L7-Ca-tFB" customClass="ListTableViewCell" customModule="ZhiHuRX" customModuleProvider="target">
@@ -110,7 +113,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="xYf-Zg-Gy3" id="3vv-xA-LGC"/>
                         <outlet property="menuItem" destination="HSV-QZ-JGb" id="wXH-Nq-SdK"/>
+                        <outlet property="tableView" destination="jrK-93-0D8" id="V6j-dY-Lhp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zqj-gK-bNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
