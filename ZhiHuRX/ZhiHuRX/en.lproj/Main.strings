@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "收藏"; ObjectID = "1qk-x1-69F"; */
+"1qk-x1-69F.normalTitle" = "收藏";
+
+/* Class = "UIButton"; normalTitle = "离线"; ObjectID = "9tX-4Q-38h"; */
+"9tX-4Q-38h.normalTitle" = "离线";
+
+/* Class = "UIButton"; normalTitle = "消息"; ObjectID = "Xsw-tq-Z2w"; */
+"Xsw-tq-Z2w.normalTitle" = "消息";
+
+/* Class = "UIButton"; normalTitle = "夜间"; ObjectID = "ab2-PT-8Cr"; */
+"ab2-PT-8Cr.normalTitle" = "夜间";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dgz-QW-Gfl"; */
+"dgz-QW-Gfl.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "hff-rg-Pkl"; */
+"hff-rg-Pkl.title" = "Item";
+
+/* Class = "UILabel"; text = "首页"; ObjectID = "kCd-2d-XUf"; */
+"kCd-2d-XUf.text" = "首页";
+
+/* Class = "UIButton"; normalTitle = "设置"; ObjectID = "sOQ-B2-BGY"; */
+"sOQ-B2-BGY.normalTitle" = "设置";
+
+/* Class = "UINavigationItem"; title = "首页"; ObjectID = "zeR-Ls-xSt"; */
+"zeR-Ls-xSt.title" = "首页";
+
+/* Class = "UILabel"; text = "小伙伴"; ObjectID = "zm2-82-BcV"; */
+"zm2-82-BcV.text" = "小伙伴";

@@ -47,6 +47,7 @@ class HomeViewController: UIViewController {
         loadData()
         setupUI()
         
+
         //TableView相关
         dataSource.configureCell = { (dataSou, tableView, indexPath, model) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
@@ -71,8 +72,13 @@ class HomeViewController: UIViewController {
             .modelSelected(StoryModel.self)
             .subscribe(onNext: { (model) in
                 let detailVc = DetailNewsViewController()
+                self.dataArray.value.forEach({ (sectionModel) in
+                    sectionModel.items.forEach({ (storyModel) in
+                        detailVc.idArray.append(storyModel.id ?? 0)
+                    })
+                })
                 detailVc.id = model.id ?? 0
-                self.navigationController?.pushViewController(DetailNewsViewController(), animated: true)
+                self.navigationController?.pushViewController(detailVc, animated: true)
             })
             .addDisposableTo(disposBag)
         
@@ -89,12 +95,14 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bannerView.startTimer()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         bannerView.stopTimer()
     }
+    
     
 }
 
