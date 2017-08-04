@@ -8,7 +8,7 @@
 
 import UIKit
 import WebKit
-class DetailNewsWebView: WKWebView {
+class DetailNewsWebView: UIWebView {
     
     var img = UIImageView().then {
         $0.frame = CGRect.init(x: 0, y: 0, width: screenW, height: 200)
@@ -53,8 +53,9 @@ class DetailNewsWebView: WKWebView {
         acv.startAnimating()
         $0.addSubview(acv)
     }
-    override init(frame: CGRect, configuration: WKWebViewConfiguration) {
-        super.init(frame: frame, configuration: configuration)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         img.addSubview(maskImg)
         scrollView.addSubview(img)
         scrollView.addSubview(titleLab)
@@ -64,6 +65,10 @@ class DetailNewsWebView: WKWebView {
         scrollView.addSubview(waitView)
         backgroundColor = UIColor.white
     }
+    
+//    override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+//        super.init(frame: frame, configuration: configuration)
+//    }
    
     
     required init?(coder aDecoder: NSCoder) {
