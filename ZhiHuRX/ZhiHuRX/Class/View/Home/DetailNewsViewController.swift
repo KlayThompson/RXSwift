@@ -68,11 +68,14 @@ class DetailNewsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
+        
     }
     
     /// 切换界面处理
@@ -150,6 +153,7 @@ extension DetailNewsViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         currentWebView.waitView.removeFromSuperview()
+        currentWebView.nextLab.frame = CGRect.init(x: 15, y: self.currentWebView.scrollView.contentSize.height + 10, width: screenW - 30, height: 20)
         print("-------------------------------------------结束了？")
     }
 }
@@ -212,8 +216,8 @@ private extension DetailNewsViewController {
     func setupUI() {
         
         view.backgroundColor = UIColor.white
-//        automaticallyAdjustsScrollViewInsets = false
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UILabel())
+        automaticallyAdjustsScrollViewInsets = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UILabel())
         currentWebView = DetailNewsWebView(frame: view.bounds)
         currentWebView.delegate = self
         currentWebView.scrollView.delegate = self
