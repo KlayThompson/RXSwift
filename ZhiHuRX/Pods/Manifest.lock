@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.5.0)
   - HandyJSON (1.7.2)
   - Kingfisher (3.10.4)
+  - MJRefresh (3.1.12)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
   - Moya/Core (8.0.5):
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - HandyJSON
   - Kingfisher
+  - MJRefresh
   - Moya
   - Moya/RxSwift
   - RxCocoa
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
@@ -46,6 +49,6 @@ SPEC CHECKSUMS:
   Then: 8496793c8fcac95482b943909b440724c7d8d82c
   ZYBannerView: 477bcb8c38bb0b2a45bae014f9e4fa8357809023
 
-PODFILE CHECKSUM: 1928c9a16bea93b239192422cfd1d000d2566578
+PODFILE CHECKSUM: 9b4ad96900faad7af9bbbeeba82c23b6ea3ea3b8
 
 COCOAPODS: 1.1.1

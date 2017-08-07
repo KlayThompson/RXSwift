@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Moya.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0646A70BA7AFD4328A8CB25C7ED6760A</key>
+		<key>10215FB4D6EF1D746F16D78C4BF4CCED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>11A6705C8D05BDB005FCF05964D62204</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,17 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3CEE2A22A2148EB6396C8910C07291D4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>42331703385F65CC7F0C620CED223B7C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>592B2B74694AFEB5AAD601F5556A8F14</key>
+		<key>6617CBFBD4619530F072C291F114EA1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AF209FB5125BD98F331F2EBA4351CD3</key>
+		<key>9028A3AC146C429203775E83D5B4B4AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8ADE9BD911C649B986A9E925035162C</key>
+		<key>A2F6C527A858601F50900DC9A84B1D1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +122,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>E14A62900910444707A5504D25EC98DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EFDB85DF4827734B35E8A46720ACAEE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2CED3F32212ACE90994889FBE2B79B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -75,7 +75,7 @@ class DetailNewsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
-        
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     /// 切换界面处理
