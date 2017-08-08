@@ -14,6 +14,7 @@ import RxDataSources
 import ZYBannerView
 import Then
 import SwiftDate
+import MJRefresh
 
 class HomeViewController: UIViewController {
     
@@ -38,6 +39,8 @@ class HomeViewController: UIViewController {
     var barView = UIView()
     //刷新的时间
     var newsDate = ""
+    //隐藏菜单栏手势：还有一种就是菜单栏就是一个正常的viewController大小来处理这种手势更方便
+    var tap: UITapGestureRecognizer?//注意：此处处理不完善，需要两处地方移除该手势，在接受通知切换主题时候需要移除，还有当点击了手势执行后需要移除
 
     
     
@@ -71,6 +74,7 @@ class HomeViewController: UIViewController {
         tableView.rx
             .modelSelected(StoryModel.self)
             .subscribe(onNext: { (model) in
+                self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
                 let detailVc = DetailNewsViewController()
                 self.dataArray.value.forEach({ (sectionModel) in
                     sectionModel.items.forEach({ (storyModel) in
@@ -87,8 +91,20 @@ class HomeViewController: UIViewController {
             .tap
             .subscribe(onNext: {
                 self.menuView.showMenuView = !self.menuView.showMenuView
+                //添加一个手势，当菜单栏显示的时候，点击此界面则隐藏菜单栏
+                self.tap = UITapGestureRecognizer(target: self, action: #selector(self.tapMe))
+                self.view.addGestureRecognizer(self.tap!)
             })
             .addDisposableTo(disposBag)
+        
+        //接受通知，移除手势
+        NotificationCenter.default.rx
+            .notification(NSNotification.Name("REMOVEHOMETAP"))
+            .subscribe(onNext: { (notify) in
+                self.view.removeGestureRecognizer(self.tap!)
+            })
+            .addDisposableTo(disposBag)
+            
         
     }
 
@@ -106,6 +122,20 @@ class HomeViewController: UIViewController {
     
 }
 
+// MARK: - 自定义方法
+private extension HomeViewController {
+    
+    /// 点击非菜单栏部分
+    @objc func tapMe() {
+        //如果显示了菜单栏在进行处理
+        if menuView.showMenuView {
+            menuView.showMenuView = !menuView.showMenuView
+        }
+        //移除手势
+        view.removeGestureRecognizer(tap!)
+    }
+}
+
 // MARK: - 加载数据
 private extension HomeViewController {
 
@@ -115,6 +145,7 @@ private extension HomeViewController {
         .request(.getNewsList)
         .mapModel(ListModel.self)
         .subscribe(onNext: { (model) in
+            self.tableView.mj_header.endRefreshing()
             self.dataArray.value = [SectionModel(model: model.date ?? "", items: model.stories ?? [])]
             //处理banner图片数组
             guard let array = model.top_stories else {
@@ -145,6 +176,11 @@ private extension HomeViewController {
 
     func setupUI() {
         
+        //设置下拉刷新
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { 
+            self.loadData()
+        })
+        
         setBarUI()
     }
     
@@ -166,7 +202,8 @@ private extension HomeViewController {
         //此处需要设置tableView的frame，故不需要在sb中设置约束
         tableView.frame = CGRect(x: 0, y: -64, width: screenW, height: screenH)
         
-        
+        //设置菜单栏的tabbar
+        menuView.tabBar = navigationController?.tabBarController
     }
 }
 
@@ -218,7 +255,7 @@ extension HomeViewController: UIScrollViewDelegate {
 }
 
 // MARK: - ZYBannerViewDataSource
-extension HomeViewController: ZYBannerViewDataSource {
+extension HomeViewController: ZYBannerViewDataSource, ZYBannerViewDelegate {
 
     func numberOfItems(inBanner banner: ZYBannerView!) -> Int {
         return bannerArray.value.count
@@ -243,5 +280,19 @@ extension HomeViewController: ZYBannerViewDataSource {
         imageView.addSubview(titleLabel)
         
         return imageView
+    }
+    
+    func banner(_ banner: ZYBannerView!, didSelectItemAt index: Int) {
+        
+        let model = bannerArray.value[index]
+        
+        let detailVc = DetailNewsViewController()
+        dataArray.value.forEach({ (sectionModel) in
+            sectionModel.items.forEach({ (storyModel) in
+                detailVc.idArray.append(storyModel.id ?? 0)
+            })
+        })
+        detailVc.id = model.id ?? 0
+        navigationController?.pushViewController(detailVc, animated: true)
     }
 }

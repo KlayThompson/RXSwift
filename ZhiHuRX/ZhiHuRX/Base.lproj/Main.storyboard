@@ -54,6 +54,7 @@
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <outlet property="dataSource" destination="beC-Nq-edq" id="tT1-3a-QVy"/>
+                                        <outlet property="delegate" destination="beC-Nq-edq" id="l7H-20-TE5"/>
                                     </connections>
                                 </view>
                                 <prototypes>
@@ -123,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="1762" y="-451"/>
         </scene>
-        <!--View Controller-->
+        <!--Theme View Controller-->
         <scene sceneID="Zsn-Lc-nD3">
             <objects>
-                <viewController id="H5f-Oj-cbo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThemeViewController" hidesBottomBarWhenPushed="YES" id="H5f-Oj-cbo" customClass="ThemeViewController" customModule="ZhiHuRX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KaP-Ct-P5u"/>
                         <viewControllerLayoutGuide type="bottom" id="1dP-pw-zaZ"/>
@@ -134,9 +135,71 @@
                     <view key="view" contentMode="scaleToFill" id="Irc-wd-7zJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="APl-hs-S4Z">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListTableViewCell" id="oj9-Qk-e5q" customClass="ListTableViewCell" customModule="ZhiHuRX" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oj9-Qk-e5q" id="5n7-ld-cNw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkg-ec-JhV">
+                                                    <rect key="frame" x="15" y="14" width="255" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.031364817170000003" green="0.031376998869999999" blue="0.031364053490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-fw-juI">
+                                                    <rect key="frame" x="285" y="14" width="75" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="Ysf-0R-ktE"/>
+                                                        <constraint firstAttribute="width" constant="75" id="fAR-PY-VRj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_Morepic" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-SV-SFH">
+                                                    <rect key="frame" x="328" y="60" width="32" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="mIA-6R-6Q9"/>
+                                                        <constraint firstAttribute="height" constant="14" id="vHe-JU-hW8"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Xeg-fw-juI" secondAttribute="trailing" constant="15" id="MZE-bV-yOZ"/>
+                                                <constraint firstItem="Xeg-fw-juI" firstAttribute="centerY" secondItem="5n7-ld-cNw" secondAttribute="centerY" id="OHr-Vy-0J4"/>
+                                                <constraint firstAttribute="bottom" secondItem="CGh-SV-SFH" secondAttribute="bottom" constant="15.5" id="edo-U8-ze2"/>
+                                                <constraint firstItem="dkg-ec-JhV" firstAttribute="leading" secondItem="5n7-ld-cNw" secondAttribute="leading" constant="15" id="exx-7g-ahr"/>
+                                                <constraint firstItem="Xeg-fw-juI" firstAttribute="top" secondItem="dkg-ec-JhV" secondAttribute="top" id="hbO-1h-jpW"/>
+                                                <constraint firstAttribute="trailing" secondItem="dkg-ec-JhV" secondAttribute="trailing" constant="105" id="rVe-Pg-8HC"/>
+                                                <constraint firstAttribute="trailing" secondItem="CGh-SV-SFH" secondAttribute="trailing" constant="15" id="sr6-zt-909"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="moreImageIcon" destination="CGh-SV-SFH" id="fBi-oy-ZkQ"/>
+                                            <outlet property="newsImageview" destination="Xeg-fw-juI" id="GHd-SC-crB"/>
+                                            <outlet property="titleLabel" destination="dkg-ec-JhV" id="0a9-rW-qL9"/>
+                                            <outlet property="titleLabelRightCons" destination="rVe-Pg-8HC" id="lDz-Bl-rIy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7d-f5-tv5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dir-9e-rQF"/>
+                    <connections>
+                        <outlet property="tableView" destination="APl-hs-S4Z" id="WfX-Bs-Wp2"/>
+                        <outlet property="titleImage" destination="A7d-f5-tv5" id="Stn-Dc-5wd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysR-Uc-tV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,7 +222,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ThemeTableViewCell" rowHeight="50" id="bCr-OX-KNl" customClass="ThemeTableViewCell" customModule="ZhiHuRX" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ThemeTableViewCell" rowHeight="50" id="bCr-OX-KNl" customClass="ThemeTableViewCell" customModule="ZhiHuRX" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="225" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bCr-OX-KNl" id="m5L-S2-goo">

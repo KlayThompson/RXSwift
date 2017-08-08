@@ -25,6 +25,8 @@ class MenuViewController: UIViewController {
             showMenuView ? showMenu() : dismissMenu()
         }
     }
+    //tabBar
+    var tabBar: UITabBarController?
     
     
     override func viewDidLoad() {
@@ -69,8 +71,33 @@ private extension MenuViewController {
                 //隐藏菜单视图
                 self.showMenuView = false
                 //更改主题
+                self.showThemeView(model: model)
             })
             .addDisposableTo(disposBag)
+    }
+}
+
+// MARK: - 自定义方法
+extension MenuViewController {
+    
+    func showThemeView(model: ThemeModel) {
+        //这么做是行不通的，因为navigationController为空
+        //这个方法是使用uitabbar来处理，selectIndex
+        if model.id == nil {
+            tabBar?.selectedIndex = 0
+        } else {
+            //跳转到Theme
+            tabBar?.selectedIndex = 1
+            //传递数据模型model过去
+            //通知
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CHANGETHEME"), object: nil, userInfo: ["model" : model])
+            //因为第一次点击的时候ThemeViewController还没有创建，接收不到通知，故只能保存在本地，然后在创建的时候取出本地的来使用
+            UserDefaults.standard.set(model.name, forKey: "themeName")
+            UserDefaults.standard.set(model.thumbnail, forKey: "themeThumbnail")
+            UserDefaults.standard.set(model.id, forKey: "themeId")
+        }
+        //此处发送一个通知，首页移除手势
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "REMOVEHOMETAP"), object: nil)
     }
 }
 
@@ -87,7 +114,7 @@ extension MenuViewController {
             let toFrontView = UIApplication.shared.keyWindow?.subviews[1] else { return }
         UIApplication.shared.keyWindow?.bringSubview(toFront: toFrontView)
         //动画显示出来
-        UIView.animate(withDuration: 0.5) { 
+        UIView.animate(withDuration: 0.35) {
             firstView.transform = CGAffineTransform(translationX: 225, y: 0)
             menuView.transform = firstView.transform
         }
@@ -101,7 +128,7 @@ extension MenuViewController {
             let toFrontView = UIApplication.shared.keyWindow?.subviews[1] else { return }
         UIApplication.shared.keyWindow?.bringSubview(toFront: toFrontView)
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.35) {
             firstView.transform = CGAffineTransform(translationX: 0, y: 0)
             menuView.transform = firstView.transform
         }

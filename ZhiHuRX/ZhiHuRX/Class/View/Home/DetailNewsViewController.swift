@@ -148,13 +148,13 @@ extension DetailNewsViewController {
 extension DetailNewsViewController: UIWebViewDelegate {
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-        print("-------------------------------------------开始了？")
+//        print("-------------------------------------------开始了？")
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         currentWebView.waitView.removeFromSuperview()
         currentWebView.nextLab.frame = CGRect.init(x: 15, y: self.currentWebView.scrollView.contentSize.height + 10, width: screenW - 30, height: 20)
-        print("-------------------------------------------结束了？")
+//        print("-------------------------------------------结束了？")
     }
 }
 
