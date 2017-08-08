@@ -281,7 +281,7 @@ extension HomeViewController: ZYBannerViewDataSource, ZYBannerViewDelegate {
         
         return imageView
     }
-    
+    //点击了banner中的某个图片
     func banner(_ banner: ZYBannerView!, didSelectItemAt index: Int) {
         
         let model = bannerArray.value[index]
