@@ -270,6 +270,7 @@ extension HomeViewController: ZYBannerViewDataSource, ZYBannerViewDelegate {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         
+        
         //显示标题Label
         let titleLabel = UILabel().then { (label) in
             label.text = model.title
