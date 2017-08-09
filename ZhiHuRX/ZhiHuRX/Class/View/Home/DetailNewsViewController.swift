@@ -105,7 +105,7 @@ extension DetailNewsViewController {
         provider
             .request(.getNewsDesc(id))
             .mapModel(NewsDetailModel.self)
-            .subscribe(onNext: { (model) in
+            .subscribe(onNext: { model in
                 if let image = model.image {
                     self.currentWebView.img.kf.setImage(with: URL(string: image))
                     self.currentWebView.titleLab.text = model.title

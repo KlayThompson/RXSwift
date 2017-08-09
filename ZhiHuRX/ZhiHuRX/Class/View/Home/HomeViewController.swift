@@ -73,7 +73,7 @@ class HomeViewController: UIViewController {
         //tableView点击
         tableView.rx
             .modelSelected(StoryModel.self)
-            .subscribe(onNext: { (model) in
+            .subscribe(onNext: { model in
                 self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
                 let detailVc = DetailNewsViewController()
                 self.dataArray.value.forEach({ (sectionModel) in
@@ -100,7 +100,7 @@ class HomeViewController: UIViewController {
         //接受通知，移除手势
         NotificationCenter.default.rx
             .notification(NSNotification.Name("REMOVEHOMETAP"))
-            .subscribe(onNext: { (notify) in
+            .subscribe(onNext: { notify in
                 self.view.removeGestureRecognizer(self.tap!)
             })
             .addDisposableTo(disposBag)
@@ -138,13 +138,13 @@ private extension HomeViewController {
 
 // MARK: - 加载数据
 private extension HomeViewController {
-
+    
     func loadData() {
         
       provider
         .request(.getNewsList)
         .mapModel(ListModel.self)
-        .subscribe(onNext: { (model) in
+        .subscribe(onNext: { model in
             self.tableView.mj_header.endRefreshing()
             self.dataArray.value = [SectionModel(model: model.date ?? "", items: model.stories ?? [])]
             //处理banner图片数组
@@ -163,7 +163,7 @@ private extension HomeViewController {
         provider
             .request(.getMoreNews(newsDate))
             .mapModel(ListModel.self)
-            .subscribe(onNext: { (model) in
+            .subscribe(onNext: { model in
                 self.dataArray.value.append(SectionModel(model: model.date ?? "", items: model.stories ?? []))
                 self.newsDate = model.date ?? ""
             })
@@ -287,7 +287,7 @@ extension HomeViewController: ZYBannerViewDataSource, ZYBannerViewDelegate {
         let model = bannerArray.value[index]
         
         let detailVc = DetailNewsViewController()
-        dataArray.value.forEach({ (sectionModel) in
+        dataArray.value.forEach({ sectionModel in
             sectionModel.items.forEach({ (storyModel) in
                 detailVc.idArray.append(storyModel.id ?? 0)
             })
